@@ -1,0 +1,11 @@
+body{
+    background-color: gray;
+}
+
+.arithemtic-btn{
+    color: green;
+}
+
+#clear-btn{
+    color: rgb(128, 26, 0);
+}
