@@ -1,11 +1,38 @@
 body{
-    background-color: gray;
+    justify-content: center;
 }
 
-.arithemtic-btn{
-    color: green;
+.calculator-div{
+    background-color: black;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.arithmetic-btn{
+    /* border: none; */
+    color: black;
+    padding:5vw;
+    cursor: pointer;
+}
+
+.number-btn{
+    color: black;
+    padding:5vw;
+    cursor: pointer;
+}
+
+.row-div{
+    display: flex;
+    flex-direction: row;
 }
 
 #clear-btn{
-    color: rgb(128, 26, 0);
+    background-color: rgb(128, 26, 0);
+}
+
+.output-background{
+    background-color: beige;
+    display: inline-flex;
+    width: 30%;
+    height: 30%;
 }
