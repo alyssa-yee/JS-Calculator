@@ -9,6 +9,7 @@ body{
     border-radius: 10px;
     justify-content: center;
     padding: 20px;
+    box-shadow: 5px 5px 10px 0px black;
 }
 
 .arithmetic-btn{
@@ -25,7 +26,9 @@ body{
     box-shadow: 5px 5px 10px 0px black;
     background-color: rgb(226, 238, 241);
     color:rgb(82, 104, 116);
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
 }
+
 .number-btn{
     border: none;
     color: black;
@@ -40,7 +43,24 @@ body{
     box-shadow: 5px 5px 10px 0px black;
     background-color: rgb(94, 103, 114);
     color: white;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
     /* rgba(0, 0, 0, 0.5) */
+}
+.arithmetic-btn:hover{
+    background-color: rgb(181, 197, 201);
+    transform: translateY(-2px);
+}
+.number-btn:hover{
+    background-color: rgb(74, 84, 97);
+    transform: translateY(-2px);
+}
+.arithmetic-btn:active{
+    box-shadow: none;
+    transform: translateY(2px);
+}
+.number-btn:active{
+    box-shadow: none;
+    transform: translateY(2px);
 }
 
 .row-div{
@@ -54,12 +74,20 @@ body{
 }
 
 #clear-btn{
-    border-radius: 50%;
+    border-radius: 40%;
 }
 
 #equals-btn{
     background-color: rgb(230, 160, 29);
     color: white;
+}
+#equals-btn:hover{
+    background-color: rgb(211, 145, 22);
+    transform: translateY(-2px);
+}
+#equals-btn:active{
+    box-shadow: none;
+    transform: translateY(2px);
 }
 
 .output-background{
@@ -71,6 +99,7 @@ body{
     width: 400px;
     height: 300px;
     justify-content: center;
+    box-shadow: 5px 5px 10px 0px rgb(36, 36, 36);
 }
 
 .result{
@@ -78,3 +107,4 @@ body{
     font-size: 65px;
     font-weight: lighter;
 }
+
