@@ -17,91 +17,80 @@
 
 
 var value = document.getElementById("result").innerHTML;
-var equationIn = "";
-var equationOut = "";
+var first_input = "";
+var second_input = "";
+var answer;
 var current;
 var temp;
+var operation;
 
-function test(input){
-
+function combine(first_input, second_input, operation){
+    answer = first_input + operation + second_input
 }
+
+function reset_func(){
+    first_input = ""
+    second_input = ""
+    document.getElementById("result").innerHTML = first_input;
+    document.getElementById("decimal-btn").disabled = false;
+}
+
 
 function btnPress(clicked){
     switch(clicked){
     case "0":
-        equationIn += "0"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "0"
+        document.getElementById("result").innfirst_input;
         break; 
     case "1":
-        equationIn += "1"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "1"
+        document.getElementById("result").innerHTML = first_input;
+        second_input = first_input
+        console.log("second_input: ", second_input)
         break;
     case "2":
-        equationIn += "2"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "2"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "3":
-        equationIn += "3"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "3"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "4":
-        equationIn += "4"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "4"
+        document.getElementById("result").innerHTML = first_input;
         break
     case "5":
-        equationIn += "5"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "5"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "6":
-        equationIn += "6"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "6"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "7":
-        equationIn += "7"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "7"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "8":
-        equationIn += "8"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "8"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "9":
-        equationIn += "9"
-        document.getElementById("result").innerHTML = equationIn;
+        first_input += "9"
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "decimal-btn":
-        equationIn += "."
+        first_input += "."
         document.getElementById("decimal-btn").disabled = true;
-        document.getElementById("result").innerHTML = equationIn;
+        document.getElementById("result").innerHTML = first_input;
         break;
     case "add-btn":
-        if(current == "+"){
-            if(temp == ""){
-                break;
-            } else {
-                equationOut += "+"
-                equationOut += temp;
-                equals();
-                break;
-            }
-
-        } else {
-            temp = equationIn
-            equationOut += equationIn
-            equationOut += "+"
-            equationIn = ""
-            document.getElementById("result").innerHTML = 0;
-            softReset();
-            break;
-        }
+        operation = "+"
+        second_input += operation //1(F1) +(OPERATION)
+        console.log("first_input: ", first_input)
     }
-
-    
 }
-
-
-
-
-
 
 
 function multiplication(){
@@ -127,23 +116,24 @@ function result(){
 
 }
 
-function reset(){
-    value = 0;
-    document.getElementById("result").innerHTML = value;
-    document.getElementById("decimal-btn").disabled = false;
-}
-
 function softReset(){
     document.getElementById("decimal-btn").disabled = false;
 }
 
 function equals(){
-    current = "=";
-    console.log(equationOut) //3+
-    console.log(equationIn)  // 6
-    equationOut += equationIn
-    console.log(equationOut) //3+6
-    equationOut = eval(equationOut);
-    document.getElementById("result").innerHTML = equationOut;
+    // equationOut = eval(equationIn)
+    answer = eval(first_input);
+    document.getElementById("result").innerHTML = answer;
+    console.log("answer: ", answer)
 }
+
+//1+1 = 2, always the recent equationIN
+
+//1(EI) +(PLUS) 1(EI) = 2(EO)
+//2(EO) +(PLUS) 1(EI)
+
+//1(F1) +(PLUS) 1(F2) = 2(A)
+//2(A) +(PLUS) 1(F2) = 3(A)
+//2(A) +(PLUS) 1(F2) = 4(A)
+
 
